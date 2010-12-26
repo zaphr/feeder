@@ -1,0 +1,17 @@
+<% if @pois.count == 0 %>
+  <h1>No results found. </h1>
+<% else %>
+
+<ul class="edgetoedge">	
+<% @pois.each do |poi| %>
+  <li class="arrow"><%= link_to(poi.name, "/pois/#{poi.lpid}" )%></li>
+<% end %>
+</ul>
+
+<% end %>
+
+<% unless @title == 'all' %>
+<ul>
+  <li class="arrow"><%= link_to("Show everything for this place", "/places/#{@place_id}/things/all" )%></li>	
+</ul>	
+<% end %>

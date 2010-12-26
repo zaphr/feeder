@@ -16,15 +16,10 @@ class Place
     @hash['id']
   end
 
-  def self.search(name)
-    response.place_name_search(name)
+  def self.find_by_name(name)
+    # CGI escape to url encode place name
+    response.place_name_search CGI.escape(name)
   end
-
-  private
-
-  # def self.response
-  #   @response ||= GatewayResponse.new
-  # end
 
 end
 

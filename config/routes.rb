@@ -4,6 +4,7 @@ Feeder::Application.routes.draw do
   match 'pois/:lpid' => 'pois#show'
   match 'places' => 'places#search'
   match 'things/:poi_type' => 'places#search_screen'
+  match 'places/:place_lpid/things/:poi_type' => 'pois#index'
   root :to => "pages#find_me"
   # root :to => "places#search_screen"
 

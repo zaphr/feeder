@@ -1,0 +1,24 @@
+ 
+<ul>
+<li><%= @poi.name%></li>
+  <% if @poi.opening_hours %>
+ <li><%= "Opening info: #{@poi.opening_hours}"%></li>
+  <% end %>
+  <% if @poi.full_address %>
+ <li><%= "Location: #{@poi.full_address}"%></li>
+  <% end %>
+  <% if @poi.phone_number %>
+ <li><%= "Phone: #{@poi.phone_number}"%></li>
+  <% end %>
+  <% if @poi.url %>
+ <li><a href="http://<%= "#{@poi.url}"%>" target="_blank"><%= @poi.url %></a></li>
+  <% end %>
+
+ <li><%= raw @poi.review%></li>
+</ul>
+
+<% if @poi.is_mapable? %>
+<h1><a href=<%="http://maps.google.com/maps?q=#{@poi.latitude},#{@poi.longitude}(#{@poi.url_safe_name})"%> target="_blank">Show on map</a></h1>
+<% end %>
+
+

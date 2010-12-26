@@ -1,8 +1,7 @@
 class PlacesController < ApplicationController
 
   def search
-    # CGI escape to url encode place name
-    @places = Place.search CGI.escape(params[:place_name])
+    @places = Place.find_by_name params[:place_name]
     @title = session[:poi_type]    
   end
 
