@@ -1,11 +1,17 @@
-<h1>Place Search</h1>
-<p>First select a place
-      </p>
-
-
+<% if @places.count == 0 %>
+  <h1>No results found. </h1>
+<% else %>
+<ul>
   <% @places.each do |place| %>
-  <p><%= place.name %></p>
+  <li class="slideSelector"><%= link_to(place.name, "/places/#{place.lpid}/pois" )%></li>
   <% end %>
+</ul>
+
+<% end %>
+
+
+
+
 
 
 

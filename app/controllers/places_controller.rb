@@ -1,16 +1,14 @@
 class PlacesController < ApplicationController
-  def index
-
-    @places = Place.search params[:place_name]
-
-  end
 
   def search
-    @places = Place.search params[:place_name]
+    # CGI escape to url encode place name
+    @places = Place.search CGI.escape(params[:place_name])
+    @title = session[:poi_type]    
   end
 
-  def show
-    @place = Place.show params[:lpid]
-  end
+  def search_screen
+    session[:poi_type] = params[:poi_type]
+    @title = params[:poi_type]
+  end  
 
 end
