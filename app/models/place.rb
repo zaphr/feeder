@@ -5,15 +5,16 @@ class Place
   attr_accessor :name, :lpid
 
   def initialize(place_hash)
-    @hash = place_hash
+    # Convert hash key strings to symbols
+    @hash = place_hash.to_options
   end
 
   def name
-    @hash['full_name']
+    @hash[:full_name]
   end
 
   def lpid
-    @hash['id']
+    @hash[:id]
   end
 
   def self.find_by_name(name)
