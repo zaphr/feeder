@@ -3,6 +3,10 @@ require 'spec_helper'
 describe PoisController do
   render_views
   
+  before(:each) do
+    @place = Factory.build(:place)
+  end
+  
   describe "GET 'show'" do
     it "should be successful" do
       get 'show', :lpid => '1098362'

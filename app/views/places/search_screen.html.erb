@@ -3,5 +3,12 @@
 <ul>
 <li><%= text_field_tag 'place_name', nil, :style => 'height:60px'%></li>
 </ul>
-
 <% end -%>
+
+<% if @previous_place %>
+<ul>
+  <li>Previous search</li>	
+  <li class="slideSelector"><%= link_to(@previous_place.short_name, "/places/#{@previous_place.lpid}/pois?place_name=#{@previous_place.url_safe_name}")%></li>
+</ul>
+<% end %>
+
