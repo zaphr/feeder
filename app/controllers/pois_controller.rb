@@ -10,13 +10,14 @@ class PoisController < ApplicationController
       p = Place.new
       p.lpid = params[:place_lpid]
       p.short_name = params[:place_name]
-      session[:previous_place] = p
+      session[:place] = p
     end
   end 
 
   def show
     @poi = Poi.find(params[:lpid])
-    @title = session[:poi_type]    
+    @title = session[:poi_type]
+    @place = session[:place]    
   end
 
 end

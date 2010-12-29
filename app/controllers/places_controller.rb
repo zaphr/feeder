@@ -9,9 +9,9 @@ class PlacesController < ApplicationController
     session[:poi_type] = params[:poi_type]
     @title = params[:poi_type]
     
-    #AHHHH the horror
-    if session[:previous_place]
-      p = session[:previous_place] 
+    #AHHHH the horror O_o
+    if session[:place]
+      p = session[:place] 
       if p.is_a?(Place) 
         if !p.lpid.blank? && !p.short_name.blank?
           @previous_place = p  
