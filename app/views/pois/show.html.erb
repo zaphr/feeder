@@ -17,7 +17,7 @@
 
 <ul>
 <% if @place %>
-<li><a href=<%="http://www.lonelyplanet.com/searchResult?q=#{lp_search_term}"%> target="_blank">Search Lonely Planet</a></li>
+<li><a href=<%="http://www.lonelyplanet.com/searchResult?q=#{lp_search_term}"%> target="_blank">Search on Lonely Planet</a></li>
 <li><a href=<%="http://www.google.com/m/search?q=#{google_search_term}"%> target="_blank">Search google</a></li>
   <% if @poi.type == 'Sleep' %>
 <li><a href=<%="http://www.tripadvisor.com/MobileSearch-s#{tripadvisor_search_term}"%> target="_blank">Search tripadvisor.com</a></li>
