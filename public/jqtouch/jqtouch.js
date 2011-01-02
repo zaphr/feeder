@@ -308,10 +308,13 @@
                 goTo($(hash).data('referrer', $el), animation);
             } else {
                 $el.addClass('loading active');
+                var original_link_text = $el.text();
+                $el.text('Loading...');
                 showPageByHref($el.attr('href'), {
                     animation: animation,
                     callback: function(){ 
                         $el.removeClass('loading'); setTimeout($.fn.unselect, 250, $el);
+                        $el.text(original_link_text);
                     },
                     $referrer: $el
                 });

@@ -10,7 +10,7 @@
  <li><%= "Phone: #{@poi.phone_number}"%></li>
   <% end %>
   <% if @poi.url %>
- <li><a href="http://<%= "#{@poi.url}"%>" target="_blank"><%= @poi.url %></a></li>
+ <li class='arrow'><a href="http://<%= "#{@poi.url}"%>" target="_blank"><%= @poi.url %></a></li>
   <% end %>
  <li><%= raw @poi.review%></li>
 </ul>
@@ -18,17 +18,17 @@
 <ul>
 <% if @place %>
   <% if @poi.lp_mobile_url %>
-<li><a href=<%="#{@poi.lp_mobile_url}"%> target="_blank">Lonely Planet mobile</a></li>
+<li class='arrow'><a href=<%="#{@poi.lp_mobile_url}"%> target="_blank">Lonely Planet mobile</a></li>
   <% else %>
-<li><a href=<%="http://www.lonelyplanet.com/searchResult?q=#{lp_search_term}"%> target="_blank">Search on Lonely Planet</a></li>
+<li class='arrow'><a href=<%="http://www.lonelyplanet.com/searchResult?q=#{lp_search_term}"%> target="_blank">Search on Lonely Planet</a></li>
   <% end %>
-<li><a href=<%="http://www.google.com/m/search?q=#{google_search_term}"%> target="_blank">Search google</a></li>
+<li class='arrow'><a href=<%="http://www.google.com/m/search?q=#{google_search_term}"%> target="_blank">Search google</a></li>
   <% if @poi.type == 'Sleep' %>
-<li><a href=<%="http://www.tripadvisor.com/MobileSearch-s#{tripadvisor_search_term}"%> target="_blank">Search tripadvisor.com</a></li>
+<li class='arrow'><a href=<%="http://www.tripadvisor.com/MobileSearch-s#{tripadvisor_search_term}"%> target="_blank">Search tripadvisor.com</a></li>
   <% end %>
 <% end %>
 <% if @poi.is_mapable? %>
-<li><a href=<%="http://maps.google.com/maps?q=#{@poi.latitude},#{@poi.longitude}(#{@poi.url_safe_name})"%> target="_blank">Show on map</a></li>
+<li class='arrow'><a href=<%="http://maps.google.com/maps?q=#{@poi.latitude},#{@poi.longitude}(#{@poi.url_safe_name})"%> target="_blank">Show on map</a></li>
 <% end %>
 </ul>
 
