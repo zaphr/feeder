@@ -5,6 +5,7 @@ def google_search_term
 end  
 
 def tripadvisor_search_term
+  #TODO Breaks on "Bev & Micks". & encoded but tripadvisor loses it on redirect
   google_search_term
 end
 
