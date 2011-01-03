@@ -6,8 +6,9 @@ $(document).ready(function(){
 	
 	navigator.geolocation.getCurrentPosition(
 	  function(pos){
-        $('.find_me').each(function() {		
-		  var actualHref = $(this).attr('href');
+        $('.find_me').each(function() {	
+	      // Strip off existing url variables first		      
+		  var actualHref = $(this).attr('href').split('?')[0];
 		  this.href = actualHref + '?latitude='+pos.coords.latitude+'&longitude=' +pos.coords.longitude
 		 });
 		$el.text('Got location! Ready for search');
