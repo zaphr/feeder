@@ -17,7 +17,7 @@
 
   <% if @bounding_box %>
 <ul>
-  <li class="arrow"><%= link_to("Show all things for this area", "/things/in/#{@bounding_box}/all")%></li>
+  <li class="arrow"><%= link_to("Show all things within #{human_meters(@distance)}", "/things/in/#{@bounding_box}/all")%></li>
 </ul>	
   <% end %>
 <% end %>

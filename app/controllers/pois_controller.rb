@@ -21,6 +21,7 @@ class PoisController < ApplicationController
     @title = session[:poi_type]   
     @pois  = BasicPoi.find_by_bounding_box(params[:bounding_box], session[:poi_type])
     @bounding_box = params[:bounding_box]
+    @distance = params[:distance]
     render(:template => 'pois/index')
   end  
 

@@ -24,4 +24,8 @@ def construct_bounding_box(latitude, longitude, meters)
   "#{(dec_lat + mod).to_s},#{(dec_lat - mod).to_s},#{(dec_long + mod).to_s},#{(dec_long - mod).to_s}"  
 end
 
+def human_meters(meters)
+  "#{meters} m"
+end
+
 end
