@@ -3,7 +3,7 @@
 <% else %>
 <ul>
   <% @places.each do |place| %>
-  <li class="slideSelector"><%= link_to(place_view_line(place), "/places/#{place.lpid}/pois?place_name=#{place.url_safe_name}" )%></li>
+  <li class="slideSelector"><%= link_to(place_view_line(place), "/places/#{place.lpid}/things?place_name=#{place.url_safe_name}" )%></li>
   <% end %>
 </ul>
 

@@ -8,6 +8,10 @@ class BasicPoi
     response.poi_search(place_lpid, poi_type)
   end
 
+  def self.find_by_bounding_box(bounding_box, poi_type='all')
+    response.poi_bounding_box_search(bounding_box, poi_type)    
+  end  
+
   def url_safe_name
     # TODO: breaks on ()
     CGI.escape @name

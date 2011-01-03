@@ -17,5 +17,11 @@ def place_view_line(place)
   "#{place.short_name}  -  #{place.full_name_less_last}" 
 end  
 
-      
+def construct_bounding_box(latitude, longitude, meters)
+  dec_lat = latitude.to_d
+  dec_long = longitude.to_d
+  mod = 0.00001 * meters
+  "#{(dec_lat + mod).to_s},#{(dec_lat - mod).to_s},#{(dec_long + mod).to_s},#{(dec_long - mod).to_s}"  
+end
+
 end

@@ -16,10 +16,11 @@
 </ul>
 
 <ul>
-<% if @place %>
   <% if @poi.lp_mobile_url %>
-<li class='arrow'><a href=<%="#{@poi.lp_mobile_url}"%> target="_blank">Lonely Planet mobile</a></li>
-  <% else %>
+	<li class='arrow'><a href=<%="#{@poi.lp_mobile_url}"%> target="_blank">Lonely Planet mobile</a></li>
+  <% end %>	
+<% if @place %>
+  <% if @poi.lp_mobile_url.nil? %>
 <li class='arrow'><a href=<%="http://www.lonelyplanet.com/searchResult?q=#{lp_search_term}"%> target="_blank">Search on Lonely Planet</a></li>
   <% end %>
 <li class='arrow'><a href=<%="http://www.google.com/m/search?q=#{google_search_term}"%> target="_blank">Search google</a></li>

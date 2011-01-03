@@ -1,11 +1,15 @@
 Feeder::Application.routes.draw do
   match 'places/:place_name' => 'places#search'
-  match 'places/:place_lpid/pois' => 'pois#index'
-  match 'pois/:lpid' => 'pois#show'
+  match 'places/:place_lpid/things' => 'pois#index'
   match 'places' => 'places#search'
-  match 'things/:poi_type' => 'places#search_screen'
+  match 'things/in/:bounding_box/:poi_type' => 'pois#bounding_box', :constraints => { :bounding_box => /.*/ }   
+  match 'things/in/:bounding_box' => 'pois#bounding_box', :constraints => { :bounding_box => /.*/ } 
+  match 'things/type/:poi_type' => 'places#search_screen'
+  match 'things/:lpid' => 'pois#show'  
   match 'places/:place_lpid/things/:poi_type' => 'pois#index'
   root :to => "pages#find_me"
+  
+
   # root :to => "places#search_screen"
 
   # The priority is based upon order of creation:

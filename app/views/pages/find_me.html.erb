@@ -1,10 +1,17 @@
 <ul>
   <li>Find me</li>	
- <li class="arrow"><%= link_to("..something to eat", "/things/eat" )%></li>
- <li class="arrow"><%= link_to("..somewhere to sleep", "/things/sleep" )%></li>
- <li class="arrow"><%= link_to("..something to see", "/things/see" )%></li>
- <li class="arrow"><%= link_to("..places to shop", "/things/shop" )%></li>
- <li class="arrow"><%= link_to("..somewhere at night", "/things/night" )%></li>
- <li class="arrow"><%= link_to("..something to do", "/things/do" )%></li>	
-</ul>	
+ <li class="arrow"><%= link_to("..something to eat", "/things/type/eat", :class => 'find_me' )%></li>
+ <li class="arrow"><%= link_to("..somewhere to sleep", "/things/type/sleep", :class => 'find_me'  )%></li>
+ <li class="arrow"><%= link_to("..something to see", "/things/type/see", :class => 'find_me'  )%></li>
+ <li class="arrow"><%= link_to("..places to shop", "/things/type/shop", :class => 'find_me'  )%></li>
+ <li class="arrow"><%= link_to("..somewhere at night", "/things/type/night", :class => 'find_me'  )%></li>
+ <li class="arrow"><%= link_to("..something to do", "/things/type/do", :class => 'find_me'  )%></li>	
+</ul>
 
+<ul>
+<% if @longitude && @latitude %>
+<li><a id="long_lat_search" href="#" rel='external'>Recalculate my current location</a></li>	
+<% else %>	
+<li><a id="long_lat_search" href="#" rel='external'>Calculate my current location</a></li>	
+<% end %>	
+</ul>
