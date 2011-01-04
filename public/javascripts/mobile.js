@@ -17,10 +17,11 @@ $(document).ready(function(){
 		return false;		
   });
 
-  $("a:[href^='/']").click(function(e) {
-	var $el = $(e.target);
-	$el.text('Loading..');	
-  });	
+    // Disabling as text change still visible on back button
+	//   $("a:[href^='/']").click(function(e) {
+	// var $el = $(e.target);
+	// $el.text('Loading..');	
+	//   });	
 
   window.scrollTo(0, 1); 		
 });
