@@ -1,0 +1,14 @@
+// var $el = $(e.target);
+// $el.addClass('active');
+// $el.text('Loading..');
+
+
+	  $("a:[href^='/']").click(function() {
+	
+	
+	
+	$("div").click(function () {
+	    $(this).effect("highlight", { color: "#ff0000" }, 3000);
+	});
+	
+		

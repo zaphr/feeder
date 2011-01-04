@@ -17,11 +17,9 @@ $(document).ready(function(){
 		return false;		
   });
 
-    // Disabling as text change still visible on back button
-	//   $("a:[href^='/']").click(function(e) {
-	// var $el = $(e.target);
-	// $el.text('Loading..');	
-	//   });	
+  $('a').click(function() {		
+    $(this).effect("highlight", {color: '#CCCCCC'}, 3000);	
+  });	
 
   window.scrollTo(0, 1); 		
 });
