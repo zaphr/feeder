@@ -1,14 +1,14 @@
 <% if @longitude && @latitude %>
 <ul>	
-  <li class="arrow"><%= link_to("Within 100 meters of me", "/things/in/#{construct_bounding_box(@latitude, @longitude, 100)}/#{@poi_type}?distance=100")%></li>
-  <li class="arrow"><%= link_to("Within 500 meters of me", "/things/in/#{construct_bounding_box(@latitude, @longitude, 500)}/#{@poi_type}?distance=500")%></li>
-  <li class="arrow"><%= link_to("Within 1 km of me", "/things/in/#{construct_bounding_box(@latitude, @longitude, 1000)}/#{@poi_type}?distance=1000")%></li>
-  <li class="arrow"><%= link_to("Within 5 km of me", "/things/in/#{construct_bounding_box(@latitude, @longitude, 5000)}/#{@poi_type}?distance=5000")%></li>
+  <li class="arrow"><%= link_to("Within 100 meters of me", "/things/in/#{construct_bounding_box(@latitude, @longitude, 100)}/#{@poi_type}?distance=100", :class => 'search')%></li>
+  <li class="arrow"><%= link_to("Within 500 meters of me", "/things/in/#{construct_bounding_box(@latitude, @longitude, 500)}/#{@poi_type}?distance=500", :class => 'search')%></li>
+  <li class="arrow"><%= link_to("Within 1 km of me", "/things/in/#{construct_bounding_box(@latitude, @longitude, 1000)}/#{@poi_type}?distance=1000", :class => 'search')%></li>
+  <li class="arrow"><%= link_to("Within 5 km of me", "/things/in/#{construct_bounding_box(@latitude, @longitude, 5000)}/#{@poi_type}?distance=5000", :class => 'search')%></li>
   <li class='arrow'><a href=<%="http://maps.google.com/maps?q=#{@latitude},#{@longitude}"%>>View my location on map</a></li>
 </ul>
 <% end %>
 
-<%= form_tag('/places') do -%>
+<%= form_tag('/places', :id => 'place_search') do -%>
 <% if @longitude && @latitude %>
 <h1>Or enter a town or city</h1>
 <% else %>
@@ -22,6 +22,8 @@
 <% if @previous_place %>
 <ul>
   <li>Previous search</li>	
-  <li class="slideSelector arrow"><%= link_to(@previous_place.short_name, "/places/#{@previous_place.lpid}/things?place_name=#{@previous_place.url_safe_name}")%></li>
+  <li class="slideSelector arrow"><%= link_to(@previous_place.short_name, "/places/#{@previous_place.lpid}/things?place_name=#{@previous_place.url_safe_name}", :class => 'search')%></li>
 </ul>
 <% end %>
+
+

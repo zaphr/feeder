@@ -24,7 +24,6 @@ class PlacesController < ApplicationController
           @previous_place = p  
       end   
     end
-      
   end     
 
 end

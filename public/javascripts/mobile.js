@@ -17,9 +17,20 @@ $(document).ready(function(){
 		return false;		
   });
 
-  $('a').click(function() {		
-    $(this).effect("highlight", {color: '#CCCCCC'}, 3000);	
-  });	
+	  $('a').click(function() {		
+	    $(this).effect("highlight", {color: '#CCCCCC'}, 3000);	
+	  });	
 
-  window.scrollTo(0, 1); 		
+	$("body").delegate(".search", "click", function(){
+		$("#loading").show();
+		  $(this).effect("highlight", {color: '#CCCCCC'}, 3000);
+		  var load_uri = this.href + ' #reload_inner';
+		  $('#reload').load(load_uri, function(){
+		  $("#loading").hide();	
+		});	
+		return false;
+	});
+
+window.scrollTo(0, 1);		
 });
+

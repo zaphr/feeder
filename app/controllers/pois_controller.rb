@@ -28,7 +28,7 @@ class PoisController < ApplicationController
   def show
     @poi = Poi.find(params[:lpid])
     @title = session[:poi_type]
-    @place = session[:place] 
+    @place = session[:place]    
   end
 
 end
