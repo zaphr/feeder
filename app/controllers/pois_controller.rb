@@ -1,6 +1,7 @@
 class PoisController < ApplicationController
 
   def index
+    session[:previous_poi_search] = request.fullpath
     session[:poi_type] = params[:poi_type] if params[:poi_type]
     @pois  = BasicPoi.find_by_place(params[:place_lpid], session[:poi_type])
     @place_id = params[:place_lpid]
@@ -16,6 +17,7 @@ class PoisController < ApplicationController
   end 
 
   def bounding_box
+    session[:previous_poi_search] = request.fullpath    
     session[:place] = nil
     session[:poi_type] = params[:poi_type] if params[:poi_type]
     @title = session[:poi_type]   
@@ -28,7 +30,8 @@ class PoisController < ApplicationController
   def show
     @poi = Poi.find(params[:lpid])
     @title = session[:poi_type]
-    @place = session[:place]    
+    @place = session[:place]  
+    @previous_url = session[:previous_poi_search] 
   end
 
 end
