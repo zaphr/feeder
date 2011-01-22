@@ -9,7 +9,7 @@
  <li class="arrow"><%= link_to("..anything!!", "/things/type/all", :class => 'find_me search'  )%></li>	
 </ul>
 
-<ul class='rounded'>
+<ul id="loc_list" class='rounded'>
 <% if @longitude && @latitude %>
 <li><a id="long_lat_search" href="#" rel='external'>Recalculate my location</a></li>	
 <% else %>	
@@ -17,7 +17,6 @@
 <% end %>	
 </ul>
 
-
-	<h1>Fueled by <a href='http://www.lonelyplanet.com.au'>Lonely Planet</a> data</h1>
+	<h1 id='lplink'>Fueled by <a href='http://www.lonelyplanet.com' target="_blank">Lonely Planet</a> data</h1>
 		
 

@@ -29,14 +29,24 @@ h1 a:visited {
 }
 
 .toolbar h1 {
-	font-style:oblique;
+	color:white;
+	font-style:italic;
+	font-size: 24px;
+
+top: 8px;
+
+
 }
 
 #title_value {
 	display:none;
 }
 
-/*ul li {
-  background: -moz-linear-gradient(0% 0%, 0% 100%, from(#333), to(#5e5e65));
-  background: -moz-linear-gradient(#333, #5e5e65);	
-}*/
+ul li {
+  background: -moz-linear-gradient(#4c4d4e, #404142);	
+}
+
+#place_name{
+	color:white;
+}
+
