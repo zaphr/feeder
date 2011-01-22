@@ -12,13 +12,10 @@ $(document).ready(function(){
 		  var actualHref = $(this).attr('href').split('?')[0];
 		  this.href = actualHref + '?latitude='+pos.coords.latitude+'&longitude=' +pos.coords.longitude
 		 });
-		$el.text('Got location! Ready for search');
-    	// $('#toolbar').effect('shake', {}, 'slow');		
+		$el.text('Got location! Ready for search');		
 	  }
 	);
-	        	  
-			// setTimeout($('#loc_list').hide('explode', {}, 'slow'), 10000);
-		return false;		
+	return false;		
   });
 
 	$("body").delegate("li a", "click", function(){
@@ -35,7 +32,6 @@ $(document).ready(function(){
 		});
 		return false;
 	});
-
 
 window.scrollTo(0, 1);		
 });
