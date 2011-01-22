@@ -1,13 +1,14 @@
 <% if @places.count == 0 %>
   <h1>No results found. </h1>
 <% else %>
-<ul>
+<ul class='rounded'>
   <% @places.each do |place| %>
   <li class="slideSelector"><%= link_to(place_view_line(place), "/places/#{place.lpid}/things?place_name=#{place.url_safe_name}", :class => 'search' )%></li>
   <% end %>
 </ul>
 
 <% end %>
+
 
 
 

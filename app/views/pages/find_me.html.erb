@@ -1,4 +1,4 @@
-<ul>
+<ul class='rounded'>
   <li>Find me</li>	
  <li class="arrow"><%= link_to("..something to eat", "/things/type/eat", :class => 'find_me search' )%></li>
  <li class="arrow"><%= link_to("..somewhere to sleep", "/things/type/sleep", :class => 'find_me search'  )%></li>
@@ -6,13 +6,18 @@
  <li class="arrow"><%= link_to("..places to shop", "/things/type/shop", :class => 'find_me search'  )%></li>
  <li class="arrow"><%= link_to("..somewhere at night", "/things/type/night", :class => 'find_me search'  )%></li>
  <li class="arrow"><%= link_to("..something to do", "/things/type/do", :class => 'find_me search'  )%></li>	
+ <li class="arrow"><%= link_to("..anything!!", "/things/type/all", :class => 'find_me search'  )%></li>	
 </ul>
 
-<ul>
+<ul class='rounded'>
 <% if @longitude && @latitude %>
-<li><a id="long_lat_search" href="#" rel='external'>Recalculate my current location</a></li>	
+<li><a id="long_lat_search" href="#" rel='external'>Recalculate my location</a></li>	
 <% else %>	
-<li><a id="long_lat_search" href="#" rel='external'>Calculate my current location</a></li>	
+<li><a id="long_lat_search" href="#" rel='external'>Calculate my location</a></li>	
 <% end %>	
 </ul>
+
+
+	<h1>Fueled by <a href='http://www.lonelyplanet.com.au'>Lonely Planet</a> data</h1>
+		
 

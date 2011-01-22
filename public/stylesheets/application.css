@@ -9,5 +9,34 @@
 }
 
 body {
-    background: rgb(197,204,211) url('../images/pinstripes.png');
+    background: #5e5e65;
 }
+body > * {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#333), to(#5e5e65));
+    background: -moz-linear-gradient(#333, #5e5e65);
+}
+
+ul li {
+  color: white;	
+}	
+
+h1 {
+	color: white;
+}
+
+h1 a:visited {
+	color: blue;
+}
+
+.toolbar h1 {
+	font-style:oblique;
+}
+
+#title_value {
+	display:none;
+}
+
+/*ul li {
+  background: -moz-linear-gradient(0% 0%, 0% 100%, from(#333), to(#5e5e65));
+  background: -moz-linear-gradient(#333, #5e5e65);	
+}*/

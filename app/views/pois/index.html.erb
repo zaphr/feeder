@@ -1,7 +1,8 @@
 <% if @pois.count == 0 %>
   <h1>No results found. </h1>
 <% else %>
-<ul class="edgetoedge">	
+
+<ul class='rounded'>		
 <% @pois.each do |poi| %>
   <li class="arrow"><%= link_to(poi.name, "/things/#{poi.lpid}", :class => "search" )%></li>
 <% end %>
@@ -10,14 +11,16 @@
 
 <% unless @title == 'all' %>
   <% if @place %>
-<ul>
+<ul class='rounded'>
   <li class="arrow"><%= link_to("Show all things for this place", "/places/#{@place_id}/things/all", :class => "search" )%></li>	
 </ul>	
   <% end %>
 
   <% if @bounding_box %>
-<ul>
+<ul class='rounded'>
   <li class="arrow"><%= link_to("Show all things within #{human_meters(@distance)}", "/things/in/#{@bounding_box}/all", :class => "search")%></li>
 </ul>	
   <% end %>
 <% end %>
+
+

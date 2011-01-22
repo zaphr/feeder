@@ -11,4 +11,9 @@
 	    $(this).effect("highlight", { color: "#ff0000" }, 3000);
 	});
 	
-		
+	  <% if @poi.type == 'Sleep' %>
+	<li class='arrow'><a href=<%="http://www.tripadvisor.com/MobileSearch-s#{tripadvisor_search_term}"%> target="_blank">Search tripadvisor.com</a></li>
+	  <% end %>		
+	
+	
+	<!-- <ul class="edgetoedge">	 -->

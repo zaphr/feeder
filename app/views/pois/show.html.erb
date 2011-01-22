@@ -1,4 +1,4 @@
-<ul>
+<ul class='rounded'>
 <li><%= @poi.name%></li>
   <% if @poi.opening_hours %>
  <li><%= "Opening info: #{@poi.opening_hours}"%></li>
@@ -15,7 +15,7 @@
  <li><%= raw @poi.review%></li>
 </ul>
 
-<ul>
+<ul class='rounded'>
   <% if @poi.lp_mobile_url %>
 	<li class='arrow'><a href=<%="#{@poi.lp_mobile_url}"%> target="_blank">Lonely Planet mobile</a></li>
   <% end %>	
@@ -24,9 +24,6 @@
 <li class='arrow'><a href=<%="http://www.lonelyplanet.com/searchResult?q=#{lp_search_term}"%> target="_blank">Search on Lonely Planet</a></li>
   <% end %>
 <li class='arrow'><a href=<%="http://www.google.com/m/search?q=#{google_search_term}"%> target="_blank">Search google</a></li>
-  <% if @poi.type == 'Sleep' %>
-<li class='arrow'><a href=<%="http://www.tripadvisor.com/MobileSearch-s#{tripadvisor_search_term}"%> target="_blank">Search tripadvisor.com</a></li>
-  <% end %>
 <% end %>
 <% if @poi.is_mapable? %>
 <li class='arrow'><a href=<%="http://maps.google.com/maps?q=#{@poi.latitude},#{@poi.longitude}(#{@poi.url_safe_name})"%> target="_blank">Show on map</a></li>
@@ -36,5 +33,6 @@
 <% if @previous_url  %>
   <a href="<%= @previous_url %>" class='button leftButton search'>Back</a>
 <% end %>
+
 
 

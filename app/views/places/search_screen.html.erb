@@ -1,5 +1,5 @@
 <% if @longitude && @latitude %>
-<ul>	
+<ul class='rounded'>	
   <li class="arrow"><%= link_to("Within 100 meters of me", "/things/in/#{construct_bounding_box(@latitude, @longitude, 100)}/#{@poi_type}?distance=100", :class => 'search')%></li>
   <li class="arrow"><%= link_to("Within 500 meters of me", "/things/in/#{construct_bounding_box(@latitude, @longitude, 500)}/#{@poi_type}?distance=500", :class => 'search')%></li>
   <li class="arrow"><%= link_to("Within 1 km of me", "/things/in/#{construct_bounding_box(@latitude, @longitude, 1000)}/#{@poi_type}?distance=1000", :class => 'search')%></li>
@@ -14,16 +14,18 @@
 <% else %>
 <h1>What town or city?</h1>
 <% end %>
-<ul>
+<ul class='rounded'>
 <li><%= text_field_tag 'place_name', nil, :style => 'height:60px'%></li>
 </ul>
 <% end -%>
 
 <% if @previous_place %>
-<ul>
+<ul class='rounded'>
   <li>Previous search</li>	
   <li class="slideSelector arrow"><%= link_to(@previous_place.short_name, "/places/#{@previous_place.lpid}/things?place_name=#{@previous_place.url_safe_name}", :class => 'search')%></li>
 </ul>
 <% end %>
+
+
 
 

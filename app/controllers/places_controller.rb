@@ -1,8 +1,13 @@
 class PlacesController < ApplicationController
 
   def search
-    @places = Place.find_by_name params[:place_name]
-    @title = session[:poi_type] 
+    #TODO Fix routes to take a place name or id
+    if params[:place_name]
+      @places = Place.find_by_name params[:place_name]
+      @title = session[:poi_type] 
+    else      
+      redirect_to :root
+    end    
   end
 
   def search_screen 

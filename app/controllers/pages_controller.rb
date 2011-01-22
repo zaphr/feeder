@@ -4,6 +4,7 @@ class PagesController < ApplicationController
     @home_page = true
     @latitude = session[:latitude]
     @longitude = session[:longitude]
+    @title = 'tiny trek'
   end  
   
 end  
