@@ -20,8 +20,6 @@ class PoisController < ApplicationController
     session[:previous_poi_search] = request.fullpath    
     session[:place] = nil
     session[:poi_type] = params[:poi_type] if params[:poi_type]
-    puts "TTTITILEEE"
-    puts session[:poi_type]
     @title = session[:poi_type]   
     @pois  = BasicPoi.find_by_bounding_box(params[:bounding_box], session[:poi_type])
     @bounding_box = params[:bounding_box]

@@ -22,11 +22,13 @@ $(document).ready(function(){
       $(this).effect("highlight", {color: '#AAA'}, 200);
 	});
 	
-	$("body").delegate(".search", "click", function(){
-		$("#loading").show();
+	$("body").delegate(".search", "click", function(e){
+		var $el = $(e.target);
+		$("#loading_screen").show();
+		$el.text('Loading...');
 		  var load_uri = this.href + ' #reload_inner';
 		  $('#reload').load(load_uri, function(){
-		  $("#loading").hide();
+		  $("#loading_screen").hide();
 		  $('#title').html($('#title_value').html());
           window.scrollTo(0, 1);		
 		});

@@ -10,8 +10,7 @@ class PlacesController < ApplicationController
     end    
   end
 
-  def search_screen 
-       
+  def search_screen  
     if params[:latitude] && params[:longitude]
       session[:latitude] = params[:latitude]
       session[:longitude] = params[:longitude]   
