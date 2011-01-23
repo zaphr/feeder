@@ -1,6 +1,6 @@
 #loading_screen {
 	display:none;
-	background: black;
+	background: #5e5e65;
 	color: white;
 	opacity:0.2;
 	z-index:1000;
