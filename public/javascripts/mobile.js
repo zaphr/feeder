@@ -1,4 +1,4 @@
-$(document).ready(function(){	
+$(document).ready(function(){
 
   $("body").delegate("#long_lat_search", "click", function(e){
     var $el = $(e.target);
@@ -7,10 +7,10 @@ $(document).ready(function(){
 
 	navigator.geolocation.getCurrentPosition(
 	  function(pos){
-        $('.find_me').each(function() {	
+        $('.find_me').each(function() {
 	      // Strip off existing url variables first		      
 		  var actualHref = $(this).attr('href').split('?')[0];
-		  this.href = actualHref + '?latitude='+pos.coords.latitude+'&longitude=' +pos.coords.longitude
+		  this.href = actualHref + '?latitude='+pos.coords.latitude+'&longitude=' +pos.coords.longitude;
 		 });
 		$el.text('Got location! Ready for search');		
 	  }
@@ -35,6 +35,6 @@ $(document).ready(function(){
 		return false;
 	});
 
-window.scrollTo(0, 1);		
+  window.scrollTo(0, 1);
 });
 
