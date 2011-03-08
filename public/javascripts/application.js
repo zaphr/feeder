@@ -1,8 +1,12 @@
 (function() {
   var $;
   $ = jQuery;
+
+  USE_AJAX = false;
+
   $(document).ready(function() {
     var hide_url_bar;
+
     hide_url_bar = function() {
       return window.scrollTo(0, 1);
     };
@@ -30,16 +34,43 @@
     $("body").delegate(".search", "click", function(e) {
       var el, load_uri;
       el = $(e.target);
+
+      if(USE_AJAX)
+      {
+
       $("#loading_screen").show();
       el.text('Loading...');
       load_uri = this.href + ' #reload_inner';
       $('#reload').load(load_uri, function() {
         $("#loading_screen").hide();
         $('#title').html($('#title_value').html());
+        set_ajax_message();
         return hide_url_bar();
       });
       return false;
+      }
+
     });
+
+    $("body").delegate("#use_ajax", "click", function(e){
+        USE_AJAX = !USE_AJAX;
+        set_ajax_message();
+        return false;
+    });
+
+
+      set_ajax_message = function() {
+        var text;
+        if (USE_AJAX){
+          text = "Don't use ajax to load pages";
+        } else {
+          text = "Use ajax to load pages";
+                }
+        $('#use_ajax').text(text);
+      };
+
+
     return hide_url_bar();
+
   });
 }).call(this);

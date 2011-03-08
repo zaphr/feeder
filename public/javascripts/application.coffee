@@ -2,6 +2,10 @@ $ = jQuery
 
 $(document).ready ->
 
+  window.onunload = ->
+    document.getElementById('click').onclick = null;
+
+
   hide_url_bar = -> 
     window.scrollTo(0, 1)
 
